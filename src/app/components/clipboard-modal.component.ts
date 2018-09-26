@@ -14,13 +14,13 @@ import { RemoteDesktopManager } from '../../services';
         </div>
         <div class="modal-body">
             <p>
-                Text copied/cut within the remote desktop will appear here. 
+                Text copied/cut within the remote desktop will appear here.
                 Sending the text below will affect the remote desktop clipboard.
             </p>
             <form>
                 <div class="form-group">
-                    <ngx-codemirror 
-                        [(ngModel)]="text" 
+                    <ngx-codemirror
+                        [(ngModel)]="text"
                         name="text"
                         [options]="{
                             lineNumbers: true,
@@ -34,7 +34,7 @@ import { RemoteDesktopManager } from '../../services';
         <div class="modal-footer">
             <button type="button"
                     class="btn btn-primary"
-                    (click)="submit()" 
+                    (click)="submit()"
                     [disabled]="text.length === 0">
                 Send to remote desktop clipboard
             </button>

@@ -208,7 +208,7 @@ export class RemoteDesktopManager {
         }
     }
 
-    /** 
+    /**
      * Reset the keyboard
      * This will release all keys
      */
@@ -228,8 +228,14 @@ export class RemoteDesktopManager {
      */
     public connect(parameters = {}): void {
         const configuration = this.buildParameters(parameters);
+        console.log(configuration)
+        try{
         this.client.connect(configuration);
+      } catch(err){
+        console.log(err);
+      }
         this.bindEventHandlers();
+        console.log(parameters);
     }
 
     /**
@@ -242,8 +248,8 @@ export class RemoteDesktopManager {
 
     /**
      * Receive clipboard data from the remote desktop and emit an event to the client
-     * @param stream 
-     * @param mimetype 
+     * @param stream
+     * @param mimetype
      */
     private handleClipboard(stream: any, mimetype: string): void {
         // If the received data is text, read it as a simple string

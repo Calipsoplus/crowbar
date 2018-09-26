@@ -77,7 +77,7 @@ import { ErrorMessageComponent } from './messages/error-message.component';
                     </ngx-remote-desktop-message>
                 </div>
                 <!-- End disconnected message -->
-                
+
                 <!-- Error message -->
                 <div *ngIf="(state|async) === states.ERROR">
                     <div class="ngx-remote-desktop-message" *ngIf="errorMessage">
@@ -94,12 +94,12 @@ import { ErrorMessageComponent } from './messages/error-message.component';
                     </ngx-remote-desktop-message>
                 </div>
                 <!-- End error message -->
-                
+
                 <!-- Display -->
                 <ngx-remote-desktop-display *ngIf="(state|async) === states.CONNECTED"
                     [manager]="manager"
                     (onMouseMove)="handleDisplayMouseMove($event)">
-                </ngx-remote-desktop-display>                
+                </ngx-remote-desktop-display>
                 <!-- End display -->
             </section>
             <section [class.ngx-remote-desktop-status-bar-hidden]="manager.isFullScreen()">
@@ -135,7 +135,7 @@ export class RemoteDesktopComponent implements OnInit, OnDestroy {
         DISCONNECTED: 'DISCONNECTED',
         ERROR: 'ERROR'
     };
-    
+
     /**
      * Manage the component state
      */
@@ -155,7 +155,7 @@ export class RemoteDesktopComponent implements OnInit, OnDestroy {
 
     @ViewChild('toolbar')
     private toolbar: ElementRef;
-    
+
     /**
      * Subscriptions
      */
@@ -164,7 +164,7 @@ export class RemoteDesktopComponent implements OnInit, OnDestroy {
     /**
      * Hide or show the toolbar
      */
-    private toolbarVisible: boolean = true;
+    private toolbarVisible = true;
 
     /**
      * Subscribe to the connection state  and full screen state when the component is initialised
@@ -173,7 +173,7 @@ export class RemoteDesktopComponent implements OnInit, OnDestroy {
         this.bindSubscriptions();
     }
 
-    /** 
+    /**
      * Remove all subscriptions when the component is destroyed
      */
     ngOnDestroy(): void {

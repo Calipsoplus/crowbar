@@ -1,0 +1,9 @@
+<h3>Virtual Machines</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let machine of machines" class="col-1-4">
+    <div class="module hero" (click)="btnclick(machine.ip)">
+    <h4>{{machine.hostname}}</h4>
+    <h4>{{machine.ip}}</h4>
+    </div>
+  </a>
+</div>
