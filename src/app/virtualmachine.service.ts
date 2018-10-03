@@ -1,23 +1,19 @@
 import { Injectable } from '@angular/core';
-import {Http, RequestOptions, Response} from '@angular/http';
 import { Virtualmachine } from './models/virtualmachine';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
-import {CookieService} from 'ngx-cookie-service';
+import {HttpClient} from '@angular/common/http';
+import {environment} from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class VirtualmachineService {
-  private apiUrl = 'http://localhost:5000';
+  apiUrl = environment.AUTH_URL;
 
-  constructor(private http: Http, private cookieService: CookieService) {}
+  constructor(private http: HttpClient) {}
 
-  getVirtualMachines(user): Observable<Virtualmachine[]> {
-
-    return this.http.get(this.apiUrl + '/machines/' + user, {withCredentials: true}).map((res: Response) => {
-      console.log(res.json())
-      return <Virtualmachine[]> res.json();
-    });
+  getVirtualMachines(): Observable<Virtualmachine[]> {
+    return this.http.get<Virtualmachine[]>(this.apiUrl + '/virtualmachines/user', {withCredentials: true}).map(res => res);
   }
 }

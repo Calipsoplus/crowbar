@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" href="/">Navbar</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -12,13 +12,16 @@
         <a class="nav-link" href="/dashboard">Dashboard</a>
       </li>
       <li class="nav-item dropdown" ngbDropdown>
-      <a class="nav-link dropdown-toggle" id="dropdown01" ngbDropdownToggle>Category</a>
+      <a class="nav-link dropdown-toggle" id="dropdown01" ngbDropdownToggle>Services</a>
       <div class="dropdown-menu" aria-labelledby="dropdown01" ngbDropdownMenu>
-        <a class="dropdown-item" href="#">Angular</a>
-        <a class="dropdown-item" href="#">React</a>
-        <a class="dropdown-item" href="#">Vue.js</a>
+        <a class="dropdown-item" href="/jupyterhub">Jupyter Notebook</a>
+        <a class="dropdown-item" href="/remote-desktop">Remote Desktop</a>
+        <a class="dropdown-item" href="/virtual-machines">Virtual Machines</a>
       </div>
     </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/admin">Admin</a>
+      </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <h2>Crowbar</h2>

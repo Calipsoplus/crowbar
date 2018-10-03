@@ -9,7 +9,6 @@ import { MatSnackBarModule } from '@angular/material';
 import { CodemirrorModule } from '@ctrl/ngx-codemirror';
 import 'codemirror/mode/javascript/javascript';
 import 'codemirror/mode/markdown/markdown';
-import { HttpClientModule } from '@angular/common/http';
 
 import { ClipboardModalComponent } from './components';
 import { OverlayContainer, FullscreenOverlayContainer } from '@angular/cdk/overlay';
@@ -24,6 +23,11 @@ import { AppNavbarComponent } from './app-navbar/app-navbar.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { RemoteDesktopComponent } from './remote-desktop/remote-desktop.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import {HttpClientModule, HttpClient} from '@angular/common/http';
+import { RemoteDesktopDashboardComponent } from './remote-desktop-dashboard/remote-desktop-dashboard.component';
+import { JupyterhubComponent } from './jupyterhub/jupyterhub.component';
+import { VirtualMachinesComponent } from './virtual-machines/virtual-machines.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +37,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     LoginComponent,
     AppNavbarComponent,
     RemoteDesktopComponent,
-    DashboardComponent
+    DashboardComponent,
+    RemoteDesktopDashboardComponent,
+    JupyterhubComponent,
+    VirtualMachinesComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +55,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     NgbModule.forRoot(),
     AppRoutingModule
   ],
-  providers: [{provide: OverlayContainer, useClass: FullscreenOverlayContainer}, CookieService,
+  providers: [{provide: OverlayContainer, useClass: FullscreenOverlayContainer}, CookieService, HttpClientModule
   ],
   entryComponents: [
     ClipboardModalComponent
