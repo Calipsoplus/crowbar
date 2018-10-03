@@ -1,9 +1,25 @@
-<h3>Virtual Machines</h3>
+<h3>Services Available!</h3>
 <div class="grid grid-pad">
-  <a *ngFor="let machine of machines" class="col-1-4">
-    <div class="module hero" (click)="btnclick(machine.ip)">
-    <h4>{{machine.hostname}}</h4>
-    <h4>{{machine.ip}}</h4>
+  <a class="col-1-4">
+    <div class="module hero" routerLink="/jupyterhub">
+      <h1>
+        Jupyter Notebook
+      </h1>
+    </div>
+  </a>
+  <a class="col-1-4">
+    <div class="module hero" routerLink="/remote-desktop">
+      <h1>
+        Remote Desktop
+      </h1>
+    </div>
+  </a>
+  <a class="col-1-4">
+    <div class="module hero" (click)="btnclick('afsdfs')">
+      <h1>
+        Virtual Machine
+      </h1>
     </div>
   </a>
 </div>
+<router-outlet></router-outlet>
