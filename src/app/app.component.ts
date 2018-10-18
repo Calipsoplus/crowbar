@@ -3,7 +3,6 @@ import { MatSnackBar } from '@angular/material';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CookieService } from 'ngx-cookie-service';
 import { DOCUMENT } from '@angular/common';
-import { environment } from '../environments/environment';
 
 @Component({
     selector: 'app-root',
@@ -20,10 +19,5 @@ export class AppComponent implements OnInit {
     }
 
     ngOnInit() {
-      this.authenticate();
-    }
-
-    authenticate() {
-         this.document.location.href = environment.AUTH_URL + '/token';
     }
 }
