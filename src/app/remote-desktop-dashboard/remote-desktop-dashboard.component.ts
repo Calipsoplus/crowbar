@@ -4,7 +4,6 @@ import { Virtualmachine } from '../models/virtualmachine';
 import { VirtualmachineService } from '../virtualmachine.service';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
-import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-remote-desktop-dashboard',
@@ -13,7 +12,6 @@ import { environment } from '../../environments/environment';
 })
 export class RemoteDesktopDashboardComponent implements OnInit {
   machines: Virtualmachine[] = [];
-  user = '';
 
   constructor(private virtualMachineService: VirtualmachineService,
               private router: Router,
@@ -21,15 +19,6 @@ export class RemoteDesktopDashboardComponent implements OnInit {
               @Inject(DOCUMENT) private document: any) { }
 
   ngOnInit() {
-
-    // if (this.cookieService.check('esrf-user')) {
-    if (this.cookieService.check(environment.COOKIE_USER)) {
-      console.log('Calipso user: ', this.cookieService.get(environment.COOKIE_USER));
-      this.user = this.cookieService.get(environment.COOKIE_USER);
-    } else {
-      this.document.location.href = environment.AUTH_URL + '/token';
-    }
-
     this.getVirtualMachines();
   }
 

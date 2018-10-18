@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RemoteDesktopComponent } from './remote-desktop.component';
+import { RemoteDesktopViewerComponent } from './remote-desktop-viewer.component';
 
-describe('RemoteDesktopComponent', () => {
-  let component: RemoteDesktopComponent;
-  let fixture: ComponentFixture<RemoteDesktopComponent>;
+describe('RemoteDesktopViewerComponent', () => {
+  let component: RemoteDesktopViewerComponent;
+  let fixture: ComponentFixture<RemoteDesktopViewerComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RemoteDesktopComponent ]
+      declarations: [ RemoteDesktopViewerComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RemoteDesktopComponent);
+    fixture = TestBed.createComponent(RemoteDesktopViewerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

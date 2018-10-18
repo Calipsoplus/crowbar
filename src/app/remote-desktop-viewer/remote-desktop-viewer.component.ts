@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import {Component, OnInit, OnDestroy, ViewEncapsulation} from '@angular/core';
 
 import { MatSnackBar } from '@angular/material';
 import { WebSocketTunnel } from '@illgrenoble/guacamole-common-js';
@@ -13,11 +13,12 @@ import { ActivatedRoute } from '@angular/router';
 import {environment} from '../../environments/environment';
 
 @Component({
-  selector: 'app-remote-desktop',
+  selector: 'app-remote-viewer-desktop',
   templateUrl: './remote-desktop-viewer.component.html',
-  styleUrls: ['../../themes/default.scss', './remote-desktop-viewer.component.scss']
+  encapsulation: ViewEncapsulation.None,
+  styleUrls: ['./remote-desktop-viewer.component.scss']
 })
-export class RemoteDesktopComponent implements OnInit {
+export class RemoteDesktopViewerComponent implements OnInit {
   private manager: RemoteDesktopManager;
   private ip: string;
   private sub: any;
