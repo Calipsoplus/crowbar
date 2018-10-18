@@ -9,18 +9,18 @@
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/dashboard">Dashboard</a>
+        <a class="nav-link" [routerLink]="['/dashboard']">Dashboard</a>
       </li>
       <li class="nav-item dropdown" ngbDropdown>
       <a class="nav-link dropdown-toggle" id="dropdown01" ngbDropdownToggle>Services</a>
       <div class="dropdown-menu" aria-labelledby="dropdown01" ngbDropdownMenu>
-        <a class="dropdown-item" href="/jupyterhub">Jupyter Notebook</a>
-        <a class="dropdown-item" href="/remote-desktop">Remote Desktop</a>
-        <a class="dropdown-item" href="/virtual-machines">Virtual Machines</a>
+        <a class="dropdown-item" [routerLink]="['/jupyterhub']">Jupyter Notebook</a>
+        <a class="dropdown-item" [routerLink]="['/remote-desktop']">Remote Desktop</a>
+        <a class="dropdown-item" [routerLink]="['/virtual-machines']">Virtual Machines</a>
       </div>
     </li>
       <li class="nav-item">
-        <a class="nav-link" href="/admin">Admin</a>
+        <a class="nav-link" [routerLink]="['/admin']">Admin</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">

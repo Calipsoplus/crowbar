@@ -10,11 +10,12 @@ import { ClipboardModalComponent } from '../components';
 
 import { CookieService } from 'ngx-cookie-service';
 import { ActivatedRoute } from '@angular/router';
+import {environment} from '../../environments/environment';
 
 @Component({
   selector: 'app-remote-desktop',
-  templateUrl: './remote-desktop.component.html',
-  styleUrls: ['../../themes/default.scss', './remote-desktop.component.scss']
+  templateUrl: './remote-desktop-viewer.component.html',
+  styleUrls: ['../../themes/default.scss', './remote-desktop-viewer.component.scss']
 })
 export class RemoteDesktopComponent implements OnInit {
   private manager: RemoteDesktopManager;
@@ -98,7 +99,7 @@ export class RemoteDesktopComponent implements OnInit {
     })
     console.log('rdc ip: ', this.ip);
     // Setup tunnel. The tunnel can be either: WebsocketTunnel, HTTPTunnel or ChainedTunnel
-    const tunnel = new WebSocketTunnel('ws://localhost:8000/ws');
+    const tunnel = new WebSocketTunnel(environment.PYTHON_GUACAMOLE_URL);
     /**
      *  Create an instance of the remote desktop manager by
      *  passing in the tunnel
