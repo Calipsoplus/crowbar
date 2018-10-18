@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { NgxRemoteDesktopModule } from '../index';
 import { HttpModule} from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material';
@@ -21,13 +20,15 @@ import { CookieService } from 'ngx-cookie-service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppNavbarComponent } from './app-navbar/app-navbar.component';
 import { AppRoutingModule } from './/app-routing.module';
-import { RemoteDesktopComponent } from './remote-desktop/remote-desktop.component';
+import { RemoteDesktopViewerComponent } from './remote-desktop-viewer/remote-desktop-viewer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {HttpClientModule, HttpClient} from '@angular/common/http';
 import { RemoteDesktopDashboardComponent } from './remote-desktop-dashboard/remote-desktop-dashboard.component';
 import { JupyterhubComponent } from './jupyterhub/jupyterhub.component';
 import { VirtualMachinesComponent } from './virtual-machines/virtual-machines.component';
 import { HomeComponent } from './home/home.component';
+import {NgxRemoteDesktopModule} from '@illgrenoble/ngx-remote-desktop';
+import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -36,12 +37,13 @@ import { HomeComponent } from './home/home.component';
     FileSizePipe,
     LoginComponent,
     AppNavbarComponent,
-    RemoteDesktopComponent,
+    RemoteDesktopViewerComponent,
     DashboardComponent,
     RemoteDesktopDashboardComponent,
     JupyterhubComponent,
     VirtualMachinesComponent,
-    HomeComponent
+    HomeComponent,
+    AdminDashboardComponent
   ],
   imports: [
     BrowserModule,

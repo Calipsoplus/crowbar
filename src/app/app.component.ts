@@ -1,7 +1,6 @@
 import {Component, Inject, OnInit, ViewEncapsulation} from '@angular/core';
 import { MatSnackBar } from '@angular/material';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { RemoteDesktopManager } from '../services';
 import { CookieService } from 'ngx-cookie-service';
 import { DOCUMENT } from '@angular/common';
 import { environment } from '../environments/environment';
@@ -13,7 +12,6 @@ import { environment } from '../environments/environment';
     encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent implements OnInit {
-    private manager: RemoteDesktopManager;
 
     constructor(private ngbModal: NgbModal,
           private snackBar: MatSnackBar,
@@ -22,13 +20,10 @@ export class AppComponent implements OnInit {
     }
 
     ngOnInit() {
-      this.checkIfAuthenticated();
-
+      this.authenticate();
     }
 
-    checkIfAuthenticated() {
-      if (this.cookieService.check(environment.COOKIE_AUTH) === false) {
-        this.document.location.href = environment.AUTH_URL;
-      }
+    authenticate() {
+         this.document.location.href = environment.AUTH_URL + '/token';
     }
 }
