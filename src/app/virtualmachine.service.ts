@@ -11,9 +11,15 @@ import {environment} from '../environments/environment';
 export class VirtualmachineService {
   apiUrl = environment.AUTH_URL;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
   getVirtualMachines(): Observable<Virtualmachine[]> {
-    return this.http.get<Virtualmachine[]>(this.apiUrl + '/virtualmachines/user', {withCredentials: true}).map(res => res);
+    try {
+      return this.http.get<Virtualmachine[]>(this.apiUrl + '/virtualmachines/user', {withCredentials: true}).map(res => res);
+    } catch (e) {
+      console.log('Unable to get virtual machines from api');
+      console.log(e);
+    }
   }
 }
