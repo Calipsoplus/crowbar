@@ -13,7 +13,6 @@ import { ClipboardModalComponent } from './components';
 import { OverlayContainer, FullscreenOverlayContainer } from '@angular/cdk/overlay';
 import { RouterModule } from '@angular/router';
 import { FileSizePipe } from './pipes';
-import { LoginComponent } from './login/login.component';
 
 import { CookieService } from 'ngx-cookie-service';
 
@@ -35,7 +34,6 @@ import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard
     AppComponent,
     ClipboardModalComponent,
     FileSizePipe,
-    LoginComponent,
     AppNavbarComponent,
     RemoteDesktopViewerComponent,
     DashboardComponent,
